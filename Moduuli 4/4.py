@@ -8,6 +8,6 @@ while True:
         print("Oikein!")
         break
     elif luku > numero:
-        print("Pienempi")
+        print("Liian pieni arvaus")
     else:
-        print("Suurempi")
+        print("Liian suuri arvaus")
