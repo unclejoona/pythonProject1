@@ -1,6 +1,4 @@
-kuukaudet = ("Talvi","Talvi","Kevät","Kevät","Kevät",
-             "Kesä","Kesä","Kesä", "Syksy",
-             "Syksy", "Syksy", "Talvi")
+kuukaudet = ("talvi","kevät","kesä","syksy")
 kuukausi = int(input("Syötä kuukausi: "))
 
-print(kuukaudet[kuukausi-1])
+print(kuukaudet[kuukausi//3-1])
