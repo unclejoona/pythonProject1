@@ -31,6 +31,9 @@ while auto.matka < 10000 and auto2.matka < 10000:
     auto2.kiihdytä(randint(-10,15))
     auto.kulje(1)
     auto2.kulje(1)
-    print("auto1", auto.nopeus,auto.matka)
-    print("auto2", auto2.nopeus,auto2.matka)
+    print("auto1:", auto.nopeus,auto.matka)
+    print("auto2:", auto2.nopeus,auto2.matka)
+print("rekisteritunnus: ",auto.rekisteritunnus,"Huippunopeus:",auto.huippunopeus,"Nopeus:",auto.nopeus,"Matka:",auto.matka)
+print("rekisteritunnus: ",auto2.rekisteritunnus,"Huippunopeus:",auto2.huippunopeus,"Nopeus:",auto2.nopeus,"Matka:",auto2.matka)
+
 print((auto.rekisteritunnus if auto.matka >= 10000 else auto2.rekisteritunnus), "voitti!")
