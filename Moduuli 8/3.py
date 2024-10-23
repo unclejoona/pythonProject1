@@ -27,5 +27,5 @@ def kahden_lentokoneaseman_etaisyys():
     kursori.execute(sql2)
     tulos2 = kursori.fetchone()
     print((tulos1[0],tulos1[1]),(tulos2[0],tulos2[1]))
-    print(geodesic((tulos1[0],tulos1[1]),(tulos2[0],tulos2[1])))
+    print(geodesic((tulos1[0],tulos1[1]),(tulos2[0],tulos2[1])).km)
 kahden_lentokoneaseman_etaisyys()
