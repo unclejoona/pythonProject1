@@ -1,9 +1,18 @@
 class Talo():
 
     def __init__(self,ylinkerros,alinkerros,hissienmäärä):
-        self.ylinkerros = ylinkerros
-        self.alinkerros = alinkerros
         self.hissit =[]
+        self.alinkerros = alinkerros
+        for i in range(hissienmäärä):
+            self.hissit.append(Hissi(ylinkerros,alinkerros))
+
+    def aja_hissiä(self,kohdehissi,kerros):
+        hissi = self.hissit[kohdehissi-1]
+        hissi.siirry_kerrokseen(kerros)
+    def palohälytys(self):
+        print("Talossasi on palohälytys")
+        for hissi in self.hissit:
+            hissi.siirry_kerrokseen(self.alinkerros)
 class Hissi():
     def __init__(self,ylinkerros,alinkerros):
         self.ylinkerros = ylinkerros
@@ -32,3 +41,4 @@ class Hissi():
 h = Hissi(5,0)
 h.siirry_kerrokseen(5)
 h.siirry_kerrokseen(0)
+Talo
