@@ -19,21 +19,17 @@ class Auto():
     def kulje(self,tuntimäärä):
         self.matka += self.nopeus * tuntimäärä
 
+autot = []
+for i in range(10):
+    rekisteri = "ABC-"+ str(i+1)
+    autot.append(Auto(rekisteri, randint(100,200)))
+voitto = False
 
-auto = Auto("ABC-1", randint(100,200))
-print(auto.rekisteritunnus, auto.huippunopeus, auto.nopeus, auto.matka)
-
-auto2 = Auto("ABC-2",randint(100,200))
-print(auto2.rekisteritunnus, auto2.huippunopeus, auto2.nopeus, auto2.matka)
-
-while auto.matka < 10000 and auto2.matka < 10000:
-    auto.kiihdytä(randint(-10,15))
-    auto2.kiihdytä(randint(-10,15))
-    auto.kulje(1)
-    auto2.kulje(1)
-    print("auto1:", auto.nopeus,auto.matka)
-    print("auto2:", auto2.nopeus,auto2.matka)
-print("rekisteritunnus: ",auto.rekisteritunnus,"Huippunopeus:",auto.huippunopeus,"Nopeus:",auto.nopeus,"Matka:",auto.matka)
-print("rekisteritunnus: ",auto2.rekisteritunnus,"Huippunopeus:",auto2.huippunopeus,"Nopeus:",auto2.nopeus,"Matka:",auto2.matka)
-
-print((auto.rekisteritunnus if auto.matka >= 10000 else auto2.rekisteritunnus), "voitti!")
+while voitto == False:
+    for auto in autot:
+        auto.kiihdytä(randint(-10,15))
+        auto.kulje(1)
+        if(auto.matka >= 10000):
+            voitto = True
+for auto in autot:
+    print("Rekisteri:",auto.rekisteritunnus, "Huippunopeus: ",auto.huippunopeus,"Nopeus:", auto.nopeus,"Matka:", auto.matka)
