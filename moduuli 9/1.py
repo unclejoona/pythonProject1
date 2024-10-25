@@ -51,8 +51,8 @@ while voitto == False:
         auto.kulje(1)
         if(auto.matka >= 10000):
             voitto = True
-#for auto in autot:
-    #print("Rekisteri:",auto.rekisteritunnus, "Huippunopeus: ",auto.huippunopeus,"Nopeus:", auto.nopeus,"Matka:", auto.matka)
+for auto in autot:
+    print("Rekisteri:",auto.rekisteritunnus, "Huippunopeus: ",auto.huippunopeus,"Nopeus:", auto.nopeus,"Matka:", auto.matka)
 
 
 uudet_autot = []
