@@ -1,4 +1,5 @@
 from random import randint
+
 class Kilpailu():
     def __init__(self,nimi,pituus,autot):
         self.nimi = nimi
@@ -39,18 +40,21 @@ class Auto():
     def kulje(self,tuntimäärä):
         self.matka += self.nopeus * tuntimäärä
 
-autot = []
+
+uudet_autot = []
 for i in range(10):
     rekisteri = "ABC-"+ str(i+1)
-    autot.append(Auto(rekisteri, randint(100,200)))
-voitto = False
+    uudet_autot.append(Auto(rekisteri, randint(100,200)))
 
-while voitto == False:
-    for auto in autot:
-        auto.kiihdytä(randint(-10,15))
-        auto.kulje(1)
-        if(auto.matka >= 10000):
-            voitto = True
-for auto in autot:
-    print("Rekisteri:",auto.rekisteritunnus, "Huippunopeus: ",auto.huippunopeus,"Nopeus:", auto.nopeus,"Matka:", auto.matka)
+kilpailu = Kilpailu("Suuri romuralli", 8000, uudet_autot)
+print("TERVETULOA ", kilpailu.nimi+"in!")
+tunti = 0
+while kilpailu.kilpailu_ohi() == False:
+    tunti += 1
+    if tunti % 10 == 0:
+        kilpailu.tulosta_tilanne()
+        print(tunti)
 
+    kilpailu.tunti_kuluu()
+print("Kilpailu ohi!, kului ", tunti, " tuntia")
+kilpailu.tulosta_tilanne()
