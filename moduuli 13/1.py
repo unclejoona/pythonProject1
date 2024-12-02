@@ -10,11 +10,11 @@ app = Flask(__name__)
 def alkuluku(numero):
     numero = int(numero)
     juuri = math.floor(math.sqrt(numero))
-    isPrime = True
+    isprime = True
     for i in range(2,juuri):
         if (numero % i == 0):
-            isPrime = False
-    return {"Number": numero, "isPrime":isPrime}
+            isprime = False
+    return {"Number": numero, "isPrime":isprime}
 
 if __name__ == '__main__':
     app.run(use_reloader=True, host='127.0.0.1', port=3000)
