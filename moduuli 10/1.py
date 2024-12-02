@@ -41,4 +41,3 @@ class Hissi():
 h = Hissi(5,0)
 h.siirry_kerrokseen(5)
 h.siirry_kerrokseen(0)
-Talo
